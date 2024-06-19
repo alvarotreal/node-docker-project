@@ -9,7 +9,7 @@ pipeline {
 
         stage("Test"){
             steps{
-                sh 'npm install'
+                sh 'brew install npm'
                 sh 'npm test'
             }
         }

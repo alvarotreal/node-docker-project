@@ -4,20 +4,20 @@ pipeline {
     tools {nodejs "nodejs"}
     
     stages {
-        stage 'checkout' {
+        stage ('checkout') {
             steps{
                 checkout scm
             }
         }
 
-        stage 'Test' {
+        stage ('Test') {
             steps{
                 sh "npm install"
                 sh "npm test"
             }
         }
 
-        stage 'Build' {
+        stage ('Build') {
             steps{
             sh 'npm run build'
             }

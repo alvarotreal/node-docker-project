@@ -32,7 +32,7 @@ pipeline {
         stage("Push to Docker Hub"){
             steps{
             withDockerRegistry(credentialsId: 'DOCKERHUB_ID', toolName: 'docker') {
-            sh 'docker push ajtreal:my-node-app:1.0
+            sh 'docker push ajtreal:my-node-app:1.0'
             sh 'docker logout'
             
                 }          

@@ -31,10 +31,9 @@ pipeline {
         
         stage("Push to Docker Hub"){
             steps{
-            withDockerRegistry(credentialsId: 'DOCKERHUB_ID', toolName: 'docker') {
-            sh 'docker push ajtreal:my-node-app:1.0'
-            sh 'docker logout'
-            
+               withDockerRegistry(credentialsId: 'DOCKERHUB_ID', toolName: 'docker', url: 'https://hub.docker.com/repositories/ajtreal') {
+                   sh 'docker login -u $DOCKERHUB_ID'
+                   }            
                 }          
             }        
         }
